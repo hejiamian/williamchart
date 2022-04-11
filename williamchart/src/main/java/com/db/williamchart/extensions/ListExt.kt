@@ -4,6 +4,8 @@ import android.graphics.Path
 import com.db.williamchart.data.DataPoint
 import com.db.williamchart.data.Label
 import com.db.williamchart.data.Scale
+import java.util.Collections.max
+import java.util.Collections.min
 
 fun List<DataPoint>.limits(): Pair<Float, Float> {
 
@@ -103,8 +105,8 @@ fun List<DataPoint>.toSmoothLinePath(smoothFactor: Float): Path {
 
 private fun List<Float>.floatLimits(): Pair<Float, Float> {
 
-    val min = min() ?: 0F
-    var max = max() ?: 1F
+    val min = min(this) ?: 0F
+    var max = max(this) ?: 1F
 
     if (min == max)
         max += 1F

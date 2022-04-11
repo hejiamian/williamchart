@@ -10,7 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
-        <activity android:name="com.db.williamchartdemo.MainActivity">
+        <activity
+            android:screenOrientation="portrait"
+            android:exported="true"
+            android:name="com.db.williamchartdemo.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>
